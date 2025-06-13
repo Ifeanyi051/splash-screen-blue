@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Splash Screen</title>
     <link rel="stylesheet" href="./output.css">
+    <style>
+        .door-shape {
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+        }
+    
+    </style>
 </head>
 <body>
     <div class="block sm:hidden">
-        <div class="flex">
-            <img src="./images/Rectangle-left.svg" alt="">
-            <img src="./images/Rectangle-right.svg" alt="">
+        <div class="flex w-[100vw] h-[100vh] relative">
+            <!-- <img src="./images/Rectangle-left.svg" alt="" class="min-w-[60vw] h-[100vh] absolute left-0"> -->
+            <div class="min-w-[50vw] h-[100vh] bg-[#181B7A]" style="box-shadow: inset 0 0 40px white;">
+                
+            </div>
+
+            <div class="min-w-[50vw] h-[100vh] bg-[#181B7A]" style="box-shadow: inset 0 0 40px white;">
+            
+            </div>
         </div>
     </div>
     
@@ -20,5 +32,10 @@
             <h1 class='text-[#181B7A] text-[36px] font-bold'>View with a mobile device</h1>
         </div>
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script></script>
 </body>
 </html>
