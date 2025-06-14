@@ -5,37 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Splash Screen</title>
     <link rel="stylesheet" href="./output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
-        .door-shape {
-            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
-        }
-    
+        .poppins {
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+          }
     </style>
 </head>
 <body>
     <div class="block sm:hidden">
-        <div class="flex w-[100vw] h-[100vh] relative">
+        <div class="w-[100vw] h-[100vh] relative poppins">
             <!-- <img src="./images/Rectangle-left.svg" alt="" class="min-w-[60vw] h-[100vh] absolute left-0"> -->
             <!-- <div class="min-w-[50vw] h-[100vh] bg-[#181B7A] absolute left-0 top-0" style="box-shadow: inset 0 0 40px white; clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0% 100%);">
                 
             </div> -->
 
-            <div class="w-[50vw] h-[100vh] bg-[#181B7A] absolute left-0 top-0 door" style="box-shadow: inset 0 0 40px white; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
-                
+            <div class="w-[50.5vw] h-[100vh] bg-[#181B7A] absolute left-0 top-0 door-ifeanyileft z-[2]" style="box-shadow: inset 0 0 40px white; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+                <div class="w-full h-full relative">
+                    <img src="./images/leftstroke-top.svg" alt="" class="left-ifeanyi-top">
+                    <img src="./images/leftstroke-second.svg" alt="" class="absolute top-[80px] left-ifeanyi-second">
+                </div>
             </div>
 
-            <div class="min-w-[50vw] h-[100vh] bg-[#181B7A] absolute right-0 top-0 hidden" style="box-shadow: inset 0 0 40px white;">
+            <div class="w-[50.5vw] h-[100vh] bg-[#181B7A] absolute right-0 top-0 door-ifeanyiright z-[2]"
+                style="box-shadow: inset 0 0 40px white; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
+                <div class="w-full h-full relative">
+                    <img src="./images/rightstroke-top.svg" alt="" class="left-ifeanyi-top absolute bottom-[100px] w-[100%]">
+                    <img src="./images/rightstroke-second.svg" alt="" class="absolute bottom-0 left-ifeanyi-second w-[100%]">
+                </div>
+            </div>
+
+            <div class="h-full w-full flex justify-center items-center">
+                <h1 class="text-[10vw] font-bold text-[#181B7A] logo-ifeanyi">LOGO</h1>
+                <div class="absolute w-[100px] h-[100px] bg-[#181B7A] rounded-full ifeanyi-overlay">
+                </div>
+            </div>
+
+            <!-- main screen -->
+            <div class="bg-[#181B7A] h-[100vh] w-[100vw] absolute top-0 z-[100] ifeany-mainevent">
+                <div class="w-full h-full flex justify-center items-center">
+                    <h2 class="text-[36px] text-[white] font-semibold ifeanyihomepage">Homepage</h2>
+                </div>
+            </div>
+
             
-            </div>
-
-            <!-- 2nd door -->
-            <img src="./images/door-left.svg" alt="" class="min-w-[50vw] h-[100vh] hidden">
-            
-
-
-            <div class="min-w-[50vw] h-[100vh] absolute right-0 top-0">
-                <img src="./images/door-right.svg" alt="" class="w-[100%] h-[100%] bg-[green]">
-            </div>
 
         </div>
     </div>
@@ -51,13 +67,85 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
     <script>
-        gsap.to(".door", {
-                clipPath: "polygon(0 0%, 100% 10%, 100% 90%, 0% 100%)",
-                duration: 1.5,
-                width: "30vw",
-                ease: "bounce.out",
-                delay: 1.5
+        gsap.to(".door-ifeanyileft", {
+            clipPath: "polygon(0 0%, 100% 10%, 100% 90%, 0% 100%)",
+            duration: 2.5,
+            width: "25vw",
+            ease: "bounce",
+            delay: 2
         });
+
+        gsap.to(".door-ifeanyiright", {
+            clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0% 90%)",
+            duration: 2.5,
+            width: "25vw",
+            ease: "bounce",
+            delay: 2
+        });
+
+        gsap.to(".left-ifeanyi-top", {
+            duration: 2.5,
+            autoAlpha: 0,
+            ease: "bounce.out",
+            delay: 2
+        });
+
+        gsap.to(".left-ifeanyi-second", {
+            duration: 2.5,
+            autoAlpha: 0,
+            ease: "bounce.out",
+            delay: 2
+        });
+
+        gsap.to(".door-ifeanyileft", {
+            duration: 1,
+            x: -110,
+            delay: 7
+        });
+
+        gsap.to(".door-ifeanyiright", {
+            duration: 1,
+            x: 110,
+            delay: 7
+        });
+
+        gsap.to(".logo-ifeanyi", {
+            duration: 1,
+            scale: 2,
+            delay: 7
+        });
+
+        gsap.fromTo(".ifeanyi-overlay", {
+            autoAlpha: 0,
+            scale: .5
+        }, {
+            duration: 1,
+            scale: 10,
+            autoAlpha: 1,
+            delay: 9.5
+        });
+
+        gsap.to(".ifeanyi-overlay", {
+            autoAlpha: 0,
+            delay: 11
+        });
+
+        gsap.fromTo(".ifeany-mainevent", {
+            autoAlpha: 0,
+        }, {
+            autoAlpha: 1,
+            delay: 10.5
+        });
+
+        gsap.fromTo(".ifeanyihomepage", {
+                autoAlpha: 0,
+                y: -300
+            }, {
+                autoAlpha: 1,
+                duration: .5,
+                y:0,
+                delay: 11
+            });
           
     </script>
 </body>
