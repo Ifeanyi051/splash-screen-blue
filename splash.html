@@ -16,13 +16,27 @@
     <div class="block sm:hidden">
         <div class="flex w-[100vw] h-[100vh] relative">
             <!-- <img src="./images/Rectangle-left.svg" alt="" class="min-w-[60vw] h-[100vh] absolute left-0"> -->
-            <div class="min-w-[50vw] h-[100vh] bg-[#181B7A]" style="box-shadow: inset 0 0 40px white;">
+            <!-- <div class="min-w-[50vw] h-[100vh] bg-[#181B7A] absolute left-0 top-0" style="box-shadow: inset 0 0 40px white; clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0% 100%);">
+                
+            </div> -->
+
+            <div class="w-[50vw] h-[100vh] bg-[#181B7A] absolute left-0 top-0 door" style="box-shadow: inset 0 0 40px white; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">
                 
             </div>
 
-            <div class="min-w-[50vw] h-[100vh] bg-[#181B7A]" style="box-shadow: inset 0 0 40px white;">
+            <div class="min-w-[50vw] h-[100vh] bg-[#181B7A] absolute right-0 top-0 hidden" style="box-shadow: inset 0 0 40px white;">
             
             </div>
+
+            <!-- 2nd door -->
+            <img src="./images/door-left.svg" alt="" class="min-w-[50vw] h-[100vh] hidden">
+            
+
+
+            <div class="min-w-[50vw] h-[100vh] absolute right-0 top-0">
+                <img src="./images/door-right.svg" alt="" class="w-[100%] h-[100%] bg-[green]">
+            </div>
+
         </div>
     </div>
     
@@ -36,6 +50,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
-    <script></script>
+    <script>
+        gsap.to(".door", {
+                clipPath: "polygon(0 0%, 100% 10%, 100% 90%, 0% 100%)",
+                duration: 1.5,
+                width: "30vw",
+                ease: "bounce.out",
+                delay: 1.5
+        });
+          
+    </script>
 </body>
 </html>
